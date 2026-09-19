@@ -1,0 +1,9 @@
+id="n3q8v2"
+.venv/
+__pycache__/
+*.pyc
+.git/
+.gitignore
+.env
+db.sqlite3
+.pytest_cache/
