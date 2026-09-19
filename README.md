@@ -1,168 +1,78 @@
 # TeamTask API
 
-A backend REST API for managing projects, project members, and tasks, built with Django REST Framework.
+A production-oriented REST API for managing projects, project members, and tasks, built with **Django REST Framework**.
 
-TeamTask provides JWT-based authentication, role-based authorization, project and task management, filtering, searching, pagination, automated testing, PostgreSQL, and Docker-based development/deployment.
+TeamTask implements **JWT authentication, role-based authorization, project and task management, filtering, search, ordering, pagination, automated testing, PostgreSQL, Docker, and Gunicorn**.
 
-## Features
+## 🚀 Key Features
 
-* JWT authentication
-
-  * Login
-  * Access token refresh
-  * Logout with token blacklisting
-  * Authenticated user profile
-* User registration
-* Role-based project authorization
+* 🔐 JWT Authentication & Token Refresh
+* 🚪 JWT Logout with Token Blacklisting
+* 👥 Role-Based Authorization
 
   * Owner
   * Admin
   * Member
-* Project management
+* 📁 Project Management
+* 👤 Project Member Management
+* ✅ Task Management & Assignment
+* 🔎 Filtering, Search & Ordering
+* 📄 Pagination
+* 🧪 Automated Testing
+* 📊 Test Coverage
+* 🐘 PostgreSQL
+* 🐳 Docker & Docker Compose
+* ⚡ Gunicorn
+* 📚 OpenAPI / Swagger Documentation
 
-  * Create projects
-  * View projects
-  * Update projects
-  * Delete projects
-* Project member management
-* Task management
+## 🛠️ Tech Stack
 
-  * Create tasks
-  * View tasks
-  * Update tasks
-  * Delete tasks
-  * Assign tasks to project members
-  * Task status and priority
-  * Due dates
-* Filtering
-* Search
-* Ordering
-* Pagination
-* Request validation
-* Automated API tests
-* Test coverage
-* PostgreSQL database
-* Docker and Docker Compose
-* Gunicorn production WSGI server
-* OpenAPI / Swagger documentation
+**Backend**
 
-## Tech Stack
+* Python
+* Django
+* Django REST Framework
 
-| Technology            | Purpose                         |
-| --------------------- | ------------------------------- |
-| Python                | Programming language            |
-| Django                | Backend framework               |
-| Django REST Framework | REST API development            |
-| Simple JWT            | JWT authentication              |
-| PostgreSQL            | Database                        |
-| Docker                | Containerization                |
-| Docker Compose        | Multi-container development     |
-| Gunicorn              | WSGI server                     |
-| drf-spectacular       | OpenAPI / Swagger documentation |
-| django-filter         | API filtering                   |
+**Authentication & Security**
 
-## Project Structure
+* Simple JWT
+* Role-based permissions
+* JWT token blacklisting
 
-```text
-TeamTask-API/
-│
-├── accounts/
-│   ├── migrations/
-│   ├── admin.py
-│   ├── apps.py
-│   ├── models.py
-│   ├── permissions.py
-│   ├── serializers.py
-│   ├── tests.py
-│   ├── urls.py
-│   └── views.py
-│
-├── backend/
-│   ├── __init__.py
-│   ├── asgi.py
-│   ├── settings.py
-│   ├── urls.py
-│   └── wsgi.py
-│
-├── project/
-│   ├── migrations/
-│   ├── admin.py
-│   ├── apps.py
-│   ├── models.py
-│   ├── permissions.py
-│   ├── serializers.py
-│   ├── tests.py
-│   ├── urls.py
-│   └── views.py
-│
-├── tasks/
-│   ├── migrations/
-│   ├── admin.py
-│   ├── apps.py
-│   ├── models.py
-│   ├── pagination.py
-│   ├── permissions.py
-│   ├── serializer.py
-│   ├── tests.py
-│   ├── urls.py
-│   └── views.py
-│
-├── staticfiles/
-│
-├── .dockerignore
-├── .gitignore
-├── Dockerfile
-├── docker-compose.yml
-├── manage.py
-├── requirements.txt
-└── README.md
-```
+**Database**
 
+* PostgreSQL
 
-## Authentication
+**DevOps**
 
-TeamTask uses JWT authentication.
+* Docker
+* Docker Compose
+* Gunicorn
 
-### Authentication flow
+**Documentation & Testing**
+
+* drf-spectacular
+* Django Test Framework
+* Coverage
+
+## 📖 API Documentation
+
+Once the application is running:
+
+**Swagger UI**
 
 ```text
-Register
-   ↓
-Login
-   ↓
-Access Token + Refresh Token
-   ↓
-Authenticated API Requests
-   ↓
-Access Token expires
-   ↓
-Refresh Token
-   ↓
-New Access Token
+http://localhost:8000/api/docs/
 ```
 
-Protected endpoints require:
+**ReDoc**
 
-```http
-Authorization: Bearer <access_token>
+```text
+http://localhost:8000/api/redoc/
 ```
 
-Logout uses JWT token blacklisting to invalidate the refresh token.
+**OpenAPI Schema**
 
-## Authorization
-
-Project access is controlled using project membership and roles.
-
-### Owner
-
-The project owner has the highest level of project control.
-
-### Admin
-
-Project administrators can perform administrative operations allowed by the API.
-
-### Member
-
-Members can access project resources according to their permissions.
-
-Authorization checks ar
+```text
+http://localhost:8000/api/schema/
+```
