@@ -66,36 +66,58 @@ TeamTask provides JWT-based authentication, role-based authorization, project an
 ```text
 TeamTask-API/
 │
-└── backend/
-    ├── accounts/
-    │   ├── models.py
-    │   ├── serializers.py
-    │   ├── views.py
-    │   └── urls.py
-    │
-    ├── project/
-    │   ├── models.py
-    │   ├── serializers.py
-    │   ├── permissions.py
-    │   └── views.py
-    │
-    ├── tasks/
-    │   ├── models.py
-    │   ├── serializers.py
-    │   ├── permissions.py
-    │   ├── pagination.py
-    │   └── views.py
-    │
-    ├── backend/
-    │   ├── settings.py
-    │   ├── urls.py
-    │   └── wsgi.py
-    │
-    ├── manage.py
-    ├── Dockerfile
-    ├── docker-compose.yml
-    └── requirements.txt
+├── accounts/
+│   ├── migrations/
+│   ├── admin.py
+│   ├── apps.py
+│   ├── models.py
+│   ├── permissions.py
+│   ├── serializers.py
+│   ├── tests.py
+│   ├── urls.py
+│   └── views.py
+│
+├── backend/
+│   ├── __init__.py
+│   ├── asgi.py
+│   ├── settings.py
+│   ├── urls.py
+│   └── wsgi.py
+│
+├── project/
+│   ├── migrations/
+│   ├── admin.py
+│   ├── apps.py
+│   ├── models.py
+│   ├── permissions.py
+│   ├── serializers.py
+│   ├── tests.py
+│   ├── urls.py
+│   └── views.py
+│
+├── tasks/
+│   ├── migrations/
+│   ├── admin.py
+│   ├── apps.py
+│   ├── models.py
+│   ├── pagination.py
+│   ├── permissions.py
+│   ├── serializer.py
+│   ├── tests.py
+│   ├── urls.py
+│   └── views.py
+│
+├── staticfiles/
+│
+├── .dockerignore
+├── .gitignore
+├── Dockerfile
+├── docker-compose.yml
+├── manage.py
+├── requirements.txt
+└── README.md
 ```
+
 
 ## Authentication
 
